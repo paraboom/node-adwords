@@ -106,7 +106,7 @@ class AdwordsService {
             return callback(null, this.client, this.clientDetails);
         }
 
-        soap.createClient(this.serviceDescriptor.wsdl, (error, client) => {
+        soap.createClient(this.serviceDescriptor.wsdl, {disableCache: true}, (error, client) => {
             if (error) {
                 return callback(error);
             }
